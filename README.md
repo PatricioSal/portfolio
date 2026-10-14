@@ -2,7 +2,7 @@
 
 > **Modern, high-performance personal engineering portfolio showcasing enterprise automation pipelines, full-stack web applications, and mechanical airflow systems.**
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20Portfolio-blue?logo=googlechrome)](#)
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Portfolio-blue?logo=googlechrome)](https://patriciosal.github.io/portfolio/)
 [![Stack](https://img.shields.io/badge/Stack-Vanilla%20HTML5%20%7C%20CSS3%20%7C%20JavaScript-orange)](#-technologies)
 [![Theme](https://img.shields.io/badge/Theme-Dark%20%2F%20Light%20Mode-purple)](#-features)
 [![License](https://img.shields.io/badge/License-MIT-green)](#-license)
