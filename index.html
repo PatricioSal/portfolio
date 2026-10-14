@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patricio Salazar-Lopez | Software Engineer & Systems Developer</title>
+  <meta name="description"
+    content="Portfolio of Patricio Salazar-Lopez — Software Engineer & Systems Developer specializing in full-stack web, automated ERP pipelines, backend engineering, and technical design.">
+  <meta name="keywords"
+    content="Patricio Salazar-Lopez, Software Engineer, Portfolio, Python, Flask, Node.js, PostgreSQL, SQL Server, HVAC Duct Design, UT Dallas">
+  <meta name="author" content="Patricio Salazar-Lopez">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Patricio Salazar-Lopez | Software Engineer & Systems Developer">
+  <meta property="og:description"
+    content="Explore projects, engineering experience, and technical achievements of Patricio Salazar-Lopez.">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='sans-serif' font-weight='900' fill='%236366f1'>P</text></svg>">
+</head>
+
+<body>
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="nav-brand" aria-label="Patricio Salazar-Lopez Home">
+        <span class="brand-monogram">PS</span>
+        <span class="brand-name">Patricio<span class="highlight">.dev</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-sm btn-primary">Let's Talk</a>
+
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-content">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="https://github.com/PatricioSal" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+        style="margin-top: 1rem;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+        GitHub Profile
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            <span>Available for New Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Patricio Salazar-Lopez</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Software Engineer & Systems Developer
+          </p>
+
+          <p class="hero-description">
+            Bridging robust backend pipelines, interactive web applications, and real-world engineering pragmatism. From
+            building automated enterprise order pipelines at <strong>Sapi Technologies</strong> to designing complex
+            residential air duct systems at <strong>New Results Heating & Cooling</strong>, I engineer solutions built
+            for reliability and impact.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#experience" class="btn btn-glass">
+              <span>My Experience</span>
+            </a>
+            <a href="https://github.com/PatricioSal" target="_blank" rel="noopener noreferrer" class="btn btn-icon"
+              title="Visit GitHub Profile" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Quick Stats Banner -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">Enterprise</span>
+              <span class="stat-label">ERP Pipeline Ingestion</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">Full-Stack</span>
+              <span class="stat-label">Web & Mobile Apps</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">HVAC CAD</span>
+              <span class="stat-label">Airflow & Duct Sizing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card-wrapper">
+            <div class="avatar-card">
+              <img src="assets/images/avatar.jpg" alt="Patricio Salazar-Lopez 3D Portrait" class="avatar-img" width="460"
+                height="460" loading="eager">
+              <div class="avatar-overlay"></div>
+            </div>
+
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-top-right">
+              <span class="tech-dot dot-python"></span>
+              <span>Python & Flask</span>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <span class="tech-dot dot-sql"></span>
+              <span>PostgreSQL & MS SQL</span>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <span class="tech-dot dot-js"></span>
+              <span>Node & JavaScript</span>
+            </div>
+
+            <div class="floating-badge badge-top-left">
+              <span class="tech-dot dot-cad"></span>
+              <span>Systems & CAD Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Background & Vision</span>
+          <h2 class="section-title">Where Software Precision Meets Engineering Execution</h2>
+          <p class="section-subtitle">A multidisciplinary mindset dedicated to architecting clean code, automated
+            workflows, and tangible real-world systems.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-card">
+            <div class="about-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>Enterprise Automation & Pipelines</h3>
+            <p>
+              Experienced in creating end-to-end automation pipelines that solve tangible business bottlenecks. During
+              my internship at Sapi Technologies, I engineered automated ingest bots handling WhatsApp messages, PDF
+              purchase orders, NLP fuzzy customer matching, and direct synchronization with production SQL Server ERPs.
+            </p>
+          </div>
+
+          <div class="about-card glass-card">
+            <div class="about-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3>HVAC & Mechanical Airflow Design</h3>
+            <p>
+              My hands-on experience at New Results Heating & Cooling gave me deep mechanical engineering intuition.
+              Designing complete air duct layouts for newly constructed homes required calculating CFM airflow, static
+              pressure balance, duct friction rates, and spatial routing within architectural floor plans.
+            </p>
+          </div>
+
+          <div class="about-card glass-card">
+            <div class="about-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3>Full-Stack & Systems Architecture</h3>
+            <p>
+              From web platforms like ATX Teens Need Jobs built with modern responsive frontends and Supabase databases,
+              to mobile synchronization apps (EVO App) and CustomTkinter desktop applications, I design intuitive user
+              experiences backed by reliable database schemas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Academic & Core Philosophy Banner -->
+        <div class="about-detail-banner glass-card">
+          <div class="detail-banner-content">
+            <div class="tag-pill">Academic Foundation</div>
+            <h3>The University of Texas at Dallas</h3>
+            <p>
+              Pursuing rigorous coursework in Computer Science and Systems Design. Focused on algorithm efficiency,
+              database design, concurrent architectures, and collaborative engineering teamwork.
+            </p>
+          </div>
+          <div class="detail-banner-features">
+            <div class="feature-badge">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span>Production Pipeline Architecture</span>
+            </div>
+            <div class="feature-badge">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span>Relational Schema & SQL Design</span>
+            </div>
+            <div class="feature-badge">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span>Physical & Digital Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Track Record</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">Real-world engineering impact across software development, enterprise automation,
+            and physical systems.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1: Sapi Technologies -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <div class="timeline-brand-group">
+                  <img src="assets/images/logos/sapi_logo.jpg" alt="Sapi Technologies Logo" class="timeline-brand-icon">
+                  <div>
+                    <span class="timeline-role">Software Engineering Intern</span>
+                    <h3 class="timeline-company">Sapi Technologies LLC</h3>
+                  </div>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge">Internship</span>
+                  <span class="timeline-date">Austin, TX</span>
+                </div>
+              </div>
+
+              <p class="timeline-desc">
+                Architected and deployed <strong>SAPI_WATCHER</strong>, an automated multi-service order processing
+                pipeline that streamlined inbound order ingestion from communication channels into enterprise ERP
+                systems.
+              </p>
+
+              <div class="timeline-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">⚡</span>
+                  <div>
+                    <strong>Automated Message & PDF Parsing:</strong> Engineered a Node.js listener and Python Flask
+                    backend that ingests incoming customer WhatsApp orders, parses attached PDF purchase invoices via
+                    PyMuPDF, and stages verified orders into PostgreSQL.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🔍</span>
+                  <div>
+                    <strong>Fuzzy NLP Matching:</strong> Implemented intelligent customer and item matching algorithms
+                    that accurately mapped unstructured chat messages and colloquial item names to master enterprise
+                    product catalogs.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🖥️</span>
+                  <div>
+                    <strong>Desktop Admin Dashboard:</strong> Developed a CustomTkinter GUI featuring QR code
+                    authentication, live streaming logs, order queue management, interactive editing modals, and
+                    human-in-the-loop review.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🗄️</span>
+                  <div>
+                    <strong>Remote Production SQL Sync:</strong> Configured ODBC pipelines to remote MS SQL Server,
+                    auto-populating customer profiles, tiered pricing schedules, and pushing confirmed orders directly
+                    to the active ERP.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MS SQL Server</span>
+                <span class="tag">PyODBC</span>
+                <span class="tag">CustomTkinter</span>
+                <span class="tag">WhatsApp API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: News Heating and Cooling -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <div class="timeline-brand-group">
+                  <div class="timeline-brand-icon-wrapper">
+                    <img src="assets/images/logos/new_results_logo.png" alt="New Results Heating and Cooling Logo">
+                  </div>
+                  <div>
+                    <span class="timeline-role">HVAC Air Duct Designer & Systems Technician</span>
+                    <h3 class="timeline-company">New Results Heating and Cooling</h3>
+                  </div>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge badge-eng">Engineering</span>
+                  <span class="timeline-date">Texas</span>
+                </div>
+              </div>
+
+              <p class="timeline-desc">
+                Designed complete residential air distribution and ventilation systems for new custom home developments,
+                ensuring optimal thermal comfort, quiet operation, and strict compliance with energy efficiency codes.
+              </p>
+
+              <div class="timeline-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">📐</span>
+                  <div>
+                    <strong>Airflow & CFM Calculations:</strong> Calculated room-by-room heating and cooling CFM
+                    requirements and external static pressure (ESP) using ACCA Manual D and Manual J design
+                    methodologies.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🏠</span>
+                  <div>
+                    <strong>Blueprint & Spatial Routing:</strong> Analyzed architectural framing plans to design
+                    trunk-and-branch duct systems, carefully avoiding structural headers, load-bearing joists, and
+                    plumbing risers.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">⚖️</span>
+                  <div>
+                    <strong>System Balancing & Static Pressure:</strong> Optimized plenum transitions, damper
+                    placements, and return air pathways to prevent pressure drops and maximize HVAC heat-pump
+                    efficiency.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🤝</span>
+                  <div>
+                    <strong>Cross-Trade Collaboration:</strong> Partnered directly with general contractors, architects,
+                    and field installation crews to verify dimensional tolerances prior to drywall installation.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-tags">
+                <span class="tag">Ductwork Layout</span>
+                <span class="tag">Blueprint Analysis</span>
+                <span class="tag">Airflow Dynamics</span>
+                <span class="tag">Manual D & J</span>
+                <span class="tag">Static Pressure Sizing</span>
+                <span class="tag">Technical Coordination</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: UTD -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-card-header">
+                <div>
+                  <span class="timeline-role">Computer Science Student & Project Lead</span>
+                  <h3 class="timeline-company">The University of Texas at Dallas</h3>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge badge-acad">Academic</span>
+                  <span class="timeline-date">Richardson, TX</span>
+                </div>
+              </div>
+
+              <p class="timeline-desc">
+                Engaged in computer science coursework, collaborative software project development, and agile team
+                workflows. Built projects focusing on mobile user synchronization, database architectures, and algorithm
+                design.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Data Structures</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">Software Engineering</span>
+                <span class="tag">Database Systems</span>
+                <span class="tag">React Native / Mobile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Featured Portfolio</span>
+          <h2 class="section-title">Projects & Systems Built</h2>
+          <p class="section-subtitle">A showcase of production software, automated tools, and engineering designs.</p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="systems">Automation & Systems</button>
+          <button class="filter-btn" data-filter="web">Full-Stack & Web</button>
+          <button class="filter-btn" data-filter="engineering">Engineering & CAD</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: SAPI_WATCHER -->
+          <div class="project-card glass-card" data-category="systems">
+            <div class="project-img-box project-brand-box brand-sapi">
+              <img src="assets/images/logos/sapi_logo.jpg" alt="Sapi Technologies Logo" class="project-img"
+                loading="lazy">
+              <div class="project-category-badge">Enterprise Automation</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">SAPI_WATCHER: Automated ERP Order Ingestion</h3>
+              <p class="project-desc">
+                Full-featured enterprise order processing bot and desktop management system connecting WhatsApp
+                communication channels, PDF invoice extraction, and PostgreSQL staging directly into remote MS SQL ERP
+                systems.
+              </p>
+
+              <div class="project-tech-list">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>MS SQL Server</span>
+                <span>CustomTkinter</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="sapi">
+                  <span>View Deep Dive</span>
+                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <a href="https://github.com/PatricioSal/ColinasOrder" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-icon" title="View GitHub Repository" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: HVAC Air Duct Design -->
+          <div class="project-card glass-card" data-category="engineering">
+            <div class="project-img-box project-brand-box brand-newresults">
+              <div class="logo-card-frame">
+                <img src="assets/images/logos/new_results_logo.png" alt="New Results Heating and Cooling Logo"
+                  class="project-brand-logo" loading="lazy">
+              </div>
+              <div class="project-category-badge badge-eng">Mechanical Engineering</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Residential HVAC Air Duct & Ventilation Design</h3>
+              <p class="project-desc">
+                Engineering calculation and 3D architectural routing of supply and return duct systems for new custom
+                homes at New Results Heating & Cooling. Calculated CFM loads, friction rates, and static pressure to
+                guarantee optimal energy ratings.
+              </p>
+
+              <div class="project-tech-list">
+                <span>Manual D & J</span>
+                <span>CFM Balancing</span>
+                <span>CAD Schematics</span>
+                <span>Friction Rate</span>
+                <span>Blueprint Routing</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="hvac">
+                  <span>View Engineering Specs</span>
+                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: ATX-Teens-Need-Jobs -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-img-box project-brand-box brand-atx">
+              <div class="logo-card-frame">
+                <img src="assets/images/logos/atx_teens_logo.png" alt="ATX Teens Need Jobs Logo"
+                  class="project-brand-logo" loading="lazy">
+              </div>
+              <div class="project-category-badge badge-web">Full-Stack Web</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ATX Teens Need Jobs: Opportunity Portal</h3>
+              <p class="project-desc">
+                Responsive job board and youth opportunity platform tailored for Austin teens. Features dynamic job
+                filtering, category search, secure administrative review portal, and Supabase database integration.
+              </p>
+
+              <div class="project-tech-list">
+                <span>JavaScript</span>
+                <span>HTML5 / CSS3</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+                <span>Admin Dashboard</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="atx">
+                  <span>View Details</span>
+                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <a href="https://github.com/PatricioSal/ATX-Teens-Need-Jobs" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-icon" title="View GitHub Repository" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: EVO App -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-img-box project-brand-box brand-evo">
+              <img src="assets/images/logos/evo_logo.png" alt="EVO App Logo" class="project-img" loading="lazy">
+              <div class="project-category-badge badge-mobile">Mobile & Sync</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">EVO App: Real-Time User Sync Platform</h3>
+              <p class="project-desc">
+                Cross-platform mobile application and synchronization server developed for UT Dallas CS1200. Facilitates
+                real-time user state tracking, presence synchronization, and interactive team communication.
+              </p>
+
+              <div class="project-tech-list">
+                <span>JavaScript</span>
+                <span>React Native</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>State Sync</span>
+              </div>
+
+              <div class="project-card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="evo">
+                  <span>View Details</span>
+                  <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <a href="https://github.com/PatricioSal/EVO_App" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-icon" title="View GitHub Repository" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Technical Competencies</span>
+          <h2 class="section-title">Skills & Tooling</h2>
+          <p class="section-subtitle">Technologies, frameworks, and engineering tools leveraged across my work.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: Programming Languages -->
+          <div class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-code">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">JavaScript (ES6+)</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">HTML5 & CSS3</span>
+              <span class="skill-pill">C / C++</span>
+              <span class="skill-pill">PowerShell & Bash</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: Frameworks & Backend -->
+          <div class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-server">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3>Frameworks & Backends</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">Flask</span>
+              <span class="skill-pill">Node.js & Express</span>
+              <span class="skill-pill">React Native / Expo</span>
+              <span class="skill-pill">RESTful APIs</span>
+              <span class="skill-pill">CustomTkinter GUI</span>
+              <span class="skill-pill">PyMuPDF / Parsing</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Databases & Infrastructure -->
+          <div class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-db">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3>Databases & Infrastructure</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Microsoft SQL Server</span>
+              <span class="skill-pill">ODBC Connectivity</span>
+              <span class="skill-pill">Supabase</span>
+              <span class="skill-pill">Git & GitHub</span>
+              <span class="skill-pill">Webhooks & Event Listeners</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Engineering & Domain Expertise -->
+          <div class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-eng">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                  </path>
+                </svg>
+              </div>
+              <h3>Engineering & Domain</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">HVAC Duct Sizing</span>
+              <span class="skill-pill">ACCA Manual D & J</span>
+              <span class="skill-pill">CFM Load Sizing</span>
+              <span class="skill-pill">Static Pressure & Airflow</span>
+              <span class="skill-pill">Blueprint Interpretation</span>
+              <span class="skill-pill">Systems Integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box glass-card">
+          <div class="contact-info">
+            <span class="section-kicker">Get In Touch</span>
+            <h2 class="section-title">Let's Build Something Exceptional</h2>
+            <p class="contact-text">
+              I'm always open to discussing new software engineering roles, automated systems architecture,
+              collaborative projects, or engineering challenges. Drop a message or connect directly!
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span class="method-label">Email Me</span>
+                  <a href="mailto:pato.sallopez14@gmail.com" id="emailLink" class="method-value">pato.sallopez14@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="method-label">GitHub</span>
+                  <a href="https://github.com/PatricioSal" target="_blank" rel="noopener noreferrer"
+                    class="method-value">github.com/PatricioSal</a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <span class="method-label">Location</span>
+                  <span class="method-value">Texas, USA (DFW / Austin)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="nameInput">Your Name</label>
+                <input type="text" id="nameInput" name="name" placeholder="Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="emailInput">Your Email</label>
+                <input type="email" id="emailInput" name="email" placeholder="alex@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subjectInput">Subject</label>
+                <input type="text" id="subjectInput" name="subject" placeholder="Project Inquiry / Job Opportunity"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="messageInput">Message</label>
+                <textarea id="messageInput" name="message" rows="4"
+                  placeholder="Hi Patricio, I came across your portfolio and wanted to reach out regarding..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" id="submitFormBtn" class="btn btn-primary btn-block">
+                <span>Send Message</span>
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">Patricio Salazar-Lopez</span>
+        <span class="footer-copy">© <span id="currentYear"></span> · Built with clean vanilla web technologies.</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Back to Top ↑</a>
+        <a href="https://github.com/PatricioSal" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DEEP-DIVE MODAL -->
+  <div class="modal-overlay" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card" id="modalContainer">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-body" id="modalContent">
+        <!-- Content injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
